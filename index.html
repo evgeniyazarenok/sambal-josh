@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sambal Josh | US Market Research</title>
+    <title>Sambal Josh | US Market Analysis & Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -30,10 +30,11 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Убираем висящие предлоги для современных браузеров */
-        h1, h2, h3, p {
+        /* Prevent hanging words/prepositions */
+        h1, h2, h3, p, li {
             text-wrap: balance;
             text-wrap: pretty;
         }
@@ -43,10 +44,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            padding: 1rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -70,14 +71,16 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-dim);
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
@@ -87,197 +90,230 @@
 
         /* --- Hero Section --- */
         .hero {
-            padding: 80px 5% 40px;
+            padding: 100px 5% 60px;
             text-align: center;
             position: relative;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-size: clamp(2.8rem, 10vw, 5rem);
+            line-height: 1;
+            margin-bottom: 24px;
             font-weight: 900;
+            letter-spacing: -2px;
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             color: var(--text-dim);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
         }
 
-        .fire-accent {
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, var(--primary-red) 0%, transparent 70%);
-            filter: blur(20px);
+        .flame-bg {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--primary-red) 0%, var(--accent-orange) 30%, transparent 70%);
+            filter: blur(40px);
             position: absolute;
-            top: 20%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: -1;
-            animation: flicker 3s infinite alternate;
+            animation: burn 4s infinite alternate;
+            opacity: 0.5;
         }
 
-        @keyframes flicker {
-            0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.3); }
+        @keyframes burn {
+            0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.4) rotate(10deg); }
         }
 
         /* --- Main Content --- */
         main {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 5%;
         }
 
         section {
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--primary-red);
-            padding-left: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            font-weight: 800;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
         }
 
         h3 {
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem;
-            color: var(--accent-orange);
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--primary-red);
+            font-weight: 700;
         }
 
         p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             color: var(--text-dim);
+            font-size: 1.05rem;
         }
 
         ul {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             padding-left: 20px;
+            list-style: none;
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             color: var(--text-dim);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
         }
 
         a {
             color: var(--primary-red);
             text-decoration: none;
-            border-bottom: 1px dotted var(--primary-red);
             transition: 0.3s;
         }
 
         a:hover {
             color: var(--accent-orange);
-            border-bottom-style: solid;
+            text-decoration: underline;
         }
 
         /* --- Table Styling --- */
         .table-container {
             overflow-x: auto;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
+            background: var(--card-bg);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.9rem;
-            min-width: 600px;
+            min-width: 800px;
         }
 
         th {
-            background-color: var(--card-bg);
+            background-color: #1a1a1a;
             text-align: left;
-            padding: 15px;
+            padding: 20px;
             color: var(--text-main);
             border-bottom: 2px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         td {
-            padding: 15px;
+            padding: 18px 20px;
             border-bottom: 1px solid var(--border);
             vertical-align: top;
+            color: var(--text-dim);
         }
 
-        tr:hover {
-            background-color: rgba(255, 255, 255, 0.02);
+        tr:last-child td { border-bottom: none; }
+
+        tr:hover td {
+            color: var(--text-main);
+            background: rgba(230, 57, 70, 0.05);
         }
 
-        /* --- Cards for Stats --- */
-        .stats-grid {
+        /* --- Feature Boxes --- */
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin: 2rem 0;
         }
 
-        .stat-card {
+        .feature-card {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 16px;
             border: 1px solid var(--border);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
+        .feature-card:hover {
             border-color: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.1);
         }
 
-        .stat-card strong {
-            display: block;
-            font-size: 1.5rem;
-            color: var(--primary-red);
-            margin-bottom: 5px;
+        .feature-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+
+        /* --- Executive Summary Box --- */
+        .exec-box {
+            background: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 50px;
+            border-radius: 24px;
+            border: 1px solid var(--primary-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exec-box::after {
+            content: '🌶️';
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(-20deg);
+        }
+
+        /* --- Icons --- */
+        .icon-fire::before { content: '🔥'; }
+        .icon-pepper::before { content: '🌶️'; }
+        .icon-chart::before { content: '📊'; }
 
         /* --- Footer --- */
         footer {
-            padding: 60px 5%;
+            padding: 80px 5%;
             border-top: 1px solid var(--border);
             text-align: center;
+            background: #050505;
         }
 
         .footer-logo {
             font-weight: 900;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 30px;
             display: block;
         }
 
-        .sources {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            margin-top: 40px;
-            text-align: left;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
-        }
-
-        /* --- Mobile Adjustments --- */
+        /* --- Mobile Layout --- */
         @media (max-width: 768px) {
-            nav ul {
-                display: none; /* В реальном проекте тут будет бургер-меню */
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            header {
-                justify-content: center;
-            }
+            nav ul { display: none; } /* Real menu would have a burger toggle */
+            .hero { padding-top: 60px; }
+            .exec-box { padding: 30px 20px; }
+            h2 { font-size: 1.6rem; }
         }
-
-        /* Flame Icon Decoration */
-        .icon-pepper::before { content: '🌶️'; margin-right: 8px; }
-        .icon-fire::before { content: '🔥'; margin-right: 8px; }
-
     </style>
 </head>
 <body>
@@ -286,144 +322,124 @@
         <a href="#" class="logo">SAMBAL<span>JOSH</span></a>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#shop">Shop Online</a></li>
-                <li><a href="#direct">Direct Order</a></li>
-                <li><a href="#amazon">On Amazon</a></li>
-                <li><a href="#text">Text Us</a></li>
+                <li><a href="#landscape">About</a></li>
+                <li><a href="#landscape">Shop Online</a></li>
+                <li><a href="#summary">Direct Order</a></li>
+                <li><a href="#landscape">On Amazon</a></li>
+                <li><a href="#summary">Text Us</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="fire-accent"></div>
-        <h1>US Online Market for Spicy Sauces</h1>
-        <p>Research Summary: Indonesian & Balinese Sambal Competition Analysis</p>
+        <div class="flame-bg"></div>
+        <h1>Sambal Josh</h1>
+        <p>Market Intelligence: US Online Spicy Sauce Industry & Balinese Expansion Strategy</p>
     </section>
 
     <main>
-        <!-- 1. Size of the Market -->
-        <section id="market">
-            <h2 class="icon-fire">1. Size of the US Online Spicy Sauces Market</h2>
-            <p>The US retail market for sauces, dips, and condiments was valued at <strong>USD 31.5 billion</strong> in 2022. Online sales in this category have surged, reaching 13.5% channel share.</p>
+        <!-- 1. Competitive Map -->
+        <section id="landscape">
+            <h2 class="icon-chart">1. Competitive Landscape: Sambal & Asian Heat (US Online)</h2>
             
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <strong>USD 1.1 Billion</strong>
-                    US Hot Sauce Market Size (2024 estimate)
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4><span class="icon-pepper"></span>1.1 Key Segments</h4>
+                    <p>The US online market consists of four layers: Global mass brands (Tabasco), Ethnic Asian sauces (Sriracha/Gochujang), Imported Indonesian staples, and Niche D2C Artisan brands (Bali Marle, SauceUpNYC).</p>
                 </div>
-                <div class="stat-card">
-                    <strong>7.6% CAGR</strong>
-                    Projected growth rate through 2032
+                <div class="feature-card">
+                    <h4><span class="icon-fire"></span>1.2 Amazon Presence</h4>
+                    <p>Amazon is the primary discovery engine. While mass brands dominate volume, products labeled "Balinese Sambal" account for less than 1% of the category, representing a massive "Blue Ocean" opportunity.</p>
                 </div>
-                <div class="stat-card">
-                    <strong>30–40%</strong>
-                    Estimated online penetration for specialty sauces
+                <div class="feature-card">
+                    <h4><span class="icon-pepper"></span>1.3 D2C & Specialty</h4>
+                    <p>Players like IndoFoodStore and Weee! offer variety but lack premium storytelling. The premium D2C space is dominated by Chinese/Thai chili oils, leaving a gap for authentic Balinese luxury heat.</p>
                 </div>
             </div>
 
-            <h3>1.1 Monthly online volume estimate</h3>
-            <ul>
-                <li>Annual online hot sauce sales (US): approx. <strong>USD 330–440 million</strong>.</li>
-                <li>Monthly online hot sauce sales (US): approx. <strong>USD 27–37 million</strong>.</li>
-            </ul>
-            <p><small>Sources: <a href="https://agriculture.canada.ca/en/international-trade/market-intelligence/reports-and-guides/sector-trend-analysis-sauces-dips-and-condiments-trends-united-states" target="_blank">Agriculture Canada</a>, <a href="https://www.fortunebusinessinsights.com/u-s-hot-sauce-market-107592" target="_blank">Fortune Business Insights</a>.</small></p>
-        </section>
-
-        <!-- 2. Popularity -->
-        <section id="popularity">
-            <h2 class="icon-pepper">2. Popularity of Indonesian/Balinese Spices</h2>
-            <p>Hot sauce growth is driven by consumer interest in ethnic global flavors. Indonesian sambal is perfectly positioned within the "Asian/global" trend, benefiting from curiosity about authentic premium products.</p>
-            
-            <h3>Concrete signals of demand:</h3>
-            <ul>
-                <li><strong>Indo Food Store:</strong> US-based leader with 1,000+ items.</li>
-                <li><strong>Weee!:</strong> Major Asian e-commerce platform with dedicated Indonesian Sambal assortment.</li>
-                <li><strong>Bali Marle:</strong> An artisan brand demonstrating that sambal can win awards and command premium pricing in the West.</li>
-            </ul>
-        </section>
-
-        <!-- 3. Amazon -->
-        <section id="amazon-research">
-            <h2 class="icon-fire">3. Amazon & Online Competition</h2>
-            <p>Amazon remains the dominant channel for specialty spices. While mainstream brands (Tabasco, Cholula) dominate volume, the "Indonesian Sambal" niche is growing but remains under-represented.</p>
-            <ul>
-                <li><strong>"Indonesian Sambal":</strong> Numbers in the dozens of SKUs.</li>
-                <li><strong>"Balinese Sambal":</strong> Extremely rare, accounting for less than 1% of the category.</li>
-            </ul>
-            <p>This represents a massive "Blue Ocean" opportunity for <strong>Sambal Josh</strong> to own the Balinese heat segment.</p>
-        </section>
-
-        <!-- 4. Competitive Landscape -->
-        <section id="competition">
-            <h2 class="icon-pepper">4. Competitive Landscape</h2>
+            <h3>Competitive Matrix</h3>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Axis</th>
-                            <th>Mass Brands</th>
-                            <th>Asian Mass</th>
-                            <th>Imported Indo</th>
-                            <th>Artisan D2C (Our Space)</th>
+                            <th>Feature</th>
+                            <th>Global Mass (Tabasco)</th>
+                            <th>Asian Mass (Sriracha)</th>
+                            <th>Imported (IndoFoodStore)</th>
+                            <th>Artisan D2C (Sambal Josh)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Price</td>
-                            <td>Low–mid</td>
-                            <td>Low–mid</td>
-                            <td>Low–mid</td>
-                            <td><strong>Mid–high ($8–15)</strong></td>
+                            <td><strong>Price Level</strong></td>
+                            <td>Low–Mid</td>
+                            <td>Low–Mid</td>
+                            <td>Low–Mid (Imported Grocery)</td>
+                            <td><strong>High ($8–$15 per jar)</strong></td>
                         </tr>
                         <tr>
-                            <td>Authenticity</td>
+                            <td><strong>Authenticity</strong></td>
                             <td>Low</td>
                             <td>Medium</td>
                             <td>High</td>
-                            <td><strong>High (Story-driven)</strong></td>
+                            <td><strong>Ultra-High (Regional Story)</strong></td>
                         </tr>
                         <tr>
-                            <td>Main Channel</td>
-                            <td>Grocery</td>
-                            <td>Grocery/Amazon</td>
-                            <td>Specialty sites</td>
-                            <td><strong>Own D2C / Amazon / Craft</strong></td>
+                            <td><strong>Primary Channel</strong></td>
+                            <td>Retail + Amazon</td>
+                            <td>Retail + Amazon</td>
+                            <td>Specialty Grocery</td>
+                            <td><strong>D2C + Amazon + Boutique</strong></td>
                         </tr>
                         <tr>
-                            <td>Storytelling</td>
-                            <td>Low</td>
+                            <td><strong>Storytelling</strong></td>
+                            <td>Traditional</td>
                             <td>Medium</td>
-                            <td>Low (Grocery staple)</td>
-                            <td><strong>High (Founder/Origin)</strong></td>
+                            <td>Low (Staple focus)</td>
+                            <td><strong>Strong (Origin, Chef, Craft)</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- 5. Executive Summary -->
-        <section id="summary" style="background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--primary-red);">
-            <h2 class="icon-fire">5. Investment Thesis</h2>
-            <p>The opportunity lies in positioning <strong>Sambal Josh</strong> as a premium, craft ethnic hot sauce, leveraging:</p>
-            <ul>
-                <li><strong>Authentic Balinese Origin:</strong> A unique selling point in a crowded Asian market.</li>
-                <li><strong>Premium Positioning:</strong> Moving away from "commodity grocery" to "lifestyle condiment."</li>
-                <li><strong>Digital-First Strategy:</strong> Dominating Amazon and D2C storytelling.</li>
-            </ul>
-            <p>Given the <strong>$27M-$37M monthly online market</strong>, establishing Sambal Josh as the reference point for "Premium Indonesian Heat" is a credible and high-growth path.</p>
+        <!-- 2. Executive Summary -->
+        <section id="summary">
+            <div class="exec-box">
+                <h2 class="icon-fire">2. Investor & Partner Executive Summary</h2>
+                
+                <h3>2.1 Market Opportunity</h3>
+                <p>The US sauces and condiments market reached <strong>$31.5 billion</strong> in 2022. The hot sauce sub-segment is a <strong>$1.1 billion</strong> powerhouse growing at ~7% annually. Online sales now account for <strong>$27M–$37M monthly</strong>, providing a fertile ground for digital-native ethnic brands.</p>
+
+                <h3>2.2 Demand Trends</h3>
+                <ul>
+                    <li>Rising consumer demand for "authentic" and "small-batch" global flavors (Mexican, Asian, Caribbean).</li>
+                    <li>The <strong>Clean Label</strong> movement: High demand for MSG-free, preservative-free, and natural ingredients.</li>
+                    <li>E-commerce is the #1 discovery channel for niche ethnic products as traditional retail remains conservative.</li>
+                </ul>
+
+                <h3>2.3 Position of Balinese Flavors</h3>
+                <p>Indonesia is a global seasoning giant, yet Balinese sambal remains an underexploited premium export. While "Sambal Oelek" is a known term, the rich, aromatic complexity of <strong>Sambal Josh</strong> (Balinese style) is a fresh, premium alternative to the saturated Sriracha and Chili Oil markets.</p>
+
+                <h3>2.4 Investment Thesis</h3>
+                <p><strong>Sambal Josh</strong> positions itself as the "Gold Standard" of Balinese heat. By leveraging high-margin D2C channels, a strong origin story, and Amazon’s logistics, we aim to capture the premium ethnic sauce segment where consumers value <strong>craft over commodity</strong>.</p>
+            </div>
         </section>
 
-        <div class="sources">
-            <strong>Sources & Citations:</strong><br>
-            [1] Agriculture Canada - Sauces & Dips Trends | [2] Fortune Business Insights - US Hot Sauce Market | [4] Coherent Market Insights | [8] IndoFoodStore | [11] Bali Marle | [15] Statista eCommerce Data.
-        </div>
+        <!-- Sources from original research -->
+        <section id="sources" style="font-size: 0.8rem; opacity: 0.6;">
+            <p><strong>Primary Data Sources:</strong> [1] Agriculture Canada - US Trends | [2] Fortune Business Insights - Hot Sauce Report 2032 | [4] Coherent Market Insights | [8] IndoFoodStore | [11] Bali Marle | [15] Statista Sauces & Spices eCommerce Analysis.</p>
+        </section>
     </main>
 
     <footer>
         <span class="footer-logo">SAMBAL<span>JOSH</span></span>
-        <p>&copy; 2024 Sambal Josh. All rights reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Strictly Premium. Strictly Spicy.</p>
+        <p>&copy; 2024 Sambal Josh. Strictly Premium. Strictly Spicy.</p>
+        <div style="margin-top: 20px;">
+            <a href="#" style="margin: 0 10px;">About</a>
+            <a href="#" style="margin: 0 10px;">Amazon Store</a>
+            <a href="#" style="margin: 0 10px;">Wholesale</a>
+        </div>
     </footer>
 
 </body>
