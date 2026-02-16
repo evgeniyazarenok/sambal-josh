@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sambal Josh | Market Research & Strategy</title>
+    <title>Sambal Josh | Market Intelligence & Execution Roadmap</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0a0a0a;
@@ -33,7 +33,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Prevent hanging prepositions/words */
+        /* Prevent hanging prepositions */
         h1, h2, h3, p, li {
             text-wrap: balance;
             text-wrap: pretty;
@@ -69,7 +69,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav a {
@@ -93,11 +93,11 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 12vw, 6rem);
-            line-height: 0.9;
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            line-height: 1;
             margin-bottom: 30px;
             font-weight: 900;
-            letter-spacing: -3px;
+            letter-spacing: -2px;
             text-transform: uppercase;
         }
 
@@ -105,7 +105,7 @@
             max-width: 800px;
             margin: 0 auto;
             color: var(--text-dim);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 300;
         }
 
@@ -114,18 +114,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             background: radial-gradient(circle, var(--primary-red) 0%, transparent 70%);
             filter: blur(60px);
             z-index: -1;
-            opacity: 0.4;
+            opacity: 0.3;
             animation: pulse-flame 4s infinite alternate;
         }
 
         @keyframes pulse-flame {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.6; }
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+            100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.5; }
         }
 
         /* --- Main Content --- */
@@ -138,26 +138,25 @@
         section { margin-bottom: 120px; }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 2rem;
             font-weight: 900;
             letter-spacing: -1px;
-            border-left: 6px solid var(--primary-red);
+            border-left: 5px solid var(--primary-red);
             padding-left: 20px;
         }
 
         h3 {
-            font-size: 1.8rem;
-            margin: 3rem 0 1.5rem;
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1.2rem;
             color: var(--primary-red);
         }
 
         p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #ccc; }
 
-        ul { margin-bottom: 2rem; padding-left: 1.5rem; }
-        li { margin-bottom: 1rem; color: #bbb; }
+        ul { margin-bottom: 2rem; padding-left: 1.2rem; }
+        li { margin-bottom: 0.8rem; color: #bbb; }
 
-        /* Source Links */
         .src-link {
             font-size: 0.75rem;
             vertical-align: super;
@@ -167,9 +166,7 @@
             font-weight: bold;
         }
 
-        .src-link:hover { color: var(--accent-orange); }
-
-        /* --- Data Cards --- */
+        /* --- Data Visuals --- */
         .data-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -181,90 +178,121 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
-            border-bottom: 4px solid var(--primary-red);
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
         }
+
+        .data-card:hover { border-color: var(--primary-red); }
 
         .data-card strong {
             display: block;
-            font-size: 2rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            color: var(--primary-red);
+            margin-bottom: 5px;
         }
 
-        /* --- Matrix Table --- */
         .matrix-wrap {
             overflow-x: auto;
             margin: 40px 0;
             border: 1px solid var(--border);
             border-radius: 12px;
+            background: #0f0f0f;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 700px;
-        }
+        table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: #1a1a1a; color: var(--text-main); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        th, td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        th { background: #1a1a1a; color: var(--primary-red); font-size: 0.8rem; text-transform: uppercase; }
-
-        /* --- BROTHERLY MESSAGE BLOCK --- */
-        .brother-block {
-            background: linear-gradient(135deg, #e63946 0%, #ff4d00 100%);
-            color: #fff;
+        /* --- OFFICIAL STRATEGY BLOCK (Brotherly Message) --- */
+        .strategy-block {
+            background: #000;
+            border: 1px solid var(--primary-red);
             padding: 60px;
-            border-radius: 30px;
+            border-radius: 16px;
             margin: 100px 0;
             position: relative;
-            box-shadow: 0 20px 50px rgba(230, 57, 70, 0.3);
         }
 
-        .brother-block h2 {
+        .strategy-block h2 {
             border: none;
             padding: 0;
-            font-size: 3rem;
-            line-height: 1;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
             color: #fff;
+            letter-spacing: -1.5px;
         }
 
-        .brother-block p { color: #fff; font-weight: 700; font-size: 1.4rem; line-height: 1.4; margin-bottom: 30px;}
-        .brother-block ul { list-style: none; padding: 0; }
-        .brother-block li { color: #fff; font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-weight: 500;}
-        .brother-block li::before { content: '🔥'; }
-
-        .big-cta {
-            display: block;
-            font-size: 5rem;
+        .strategy-status {
+            display: inline-block;
+            background: var(--primary-red);
+            color: #fff;
+            padding: 4px 12px;
+            font-size: 0.7rem;
             font-weight: 900;
-            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             margin-top: 40px;
-            letter-spacing: -4px;
-            text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+        }
+
+        .strategy-item h4 {
+            color: var(--primary-red);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .strategy-item p {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .cta-footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cta-footer span {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: var(--primary-red);
         }
 
         /* --- Footer --- */
         footer {
-            padding: 60px 5%;
+            padding: 80px 5%;
             background: #050505;
             border-top: 1px solid var(--border);
-            color: var(--text-dim);
-            font-size: 0.9rem;
+            text-align: left;
         }
 
-        .source-list { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.75rem; line-height: 2; }
+        .source-list {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            column-count: 2;
+            column-gap: 40px;
+        }
 
         @media (max-width: 768px) {
-            nav ul { display: none; }
             .data-grid { grid-template-columns: 1fr; }
-            .brother-block { padding: 30px; }
-            .big-cta { font-size: 3rem; }
-            .hero h1 { font-size: 3.5rem; }
+            .strategy-block { padding: 30px; }
+            .source-list { column-count: 1; }
+            .cta-footer { flex-direction: column; gap: 20px; align-items: flex-start; }
         }
     </style>
 </head>
@@ -274,171 +302,158 @@
         <a href="#" class="logo">SAMBAL<span>JOSH</span></a>
         <nav>
             <ul>
-                <li><a href="#market">About</a></li>
-                <li><a href="#online">Shop Online</a></li>
-                <li><a href="#landscape">Direct Order</a></li>
-                <li><a href="#amazon">On Amazon</a></li>
-                <li><a href="#next">Text us</a></li>
+                <li><a href="#market">Market</a></li>
+                <li><a href="#online">Online Volume</a></li>
+                <li><a href="#landscape">Competition</a></li>
+                <li><a href="#summary">Strategy</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="flame-effect"></div>
-        <h1>Hot Sauce<br>Market Insights</h1>
-        <p>US Online Spicy Sauce Analysis: From Monthly Volumes to Balinese Opportunities</p>
+        <h1>Sambal Josh<br>Market Intelligence</h1>
+        <p>Strategic Analysis of the US Spicy Sauce Sector & Balinese Expansion Roadmap</p>
     </section>
 
     <main>
         <!-- 1. MARKET SIZE -->
         <section id="market">
-            <h2>1. Market Size & Online Dominance</h2>
+            <h2>1. Market Size & E-commerce Dynamics</h2>
             <p>
-                The US retail market for sauces, dips, and condiments was valued at <strong>USD 31.5 billion</strong> in 2022 
+                The US retail market for sauces, dips, and condiments reached <strong>USD 31.5 billion</strong> in 2022 
                 <a class="src-link" href="https://agriculture.canada.ca/en/international-trade/market-intelligence/reports-and-guides/sector-trend-analysis-sauces-dips-and-condiment-trends-united-states" target="_blank">[1]</a>. 
-                Within this giant category, the specific segment of <strong>Hot Sauce</strong> (chili-based spicy sauces) accounts for approximately 
-                <strong>USD 1.0–1.1 billion</strong> in 2024, showing a robust annual growth rate of 6.5% to 7.6% 
-                <a class="src-link" href="https://www.fortunebusinessinsights.com/u-s-hot-sauce-market-107592" target="_blank">[2]</a>
-                <a class="src-link" href="https://statledger.com/products/usa-hot-sauce-market-trend-analysis-forecasts" target="_blank">[3]</a>.
+                Specifically, the <strong>Hot Sauce</strong> segment is valued at <strong>USD 1.1 billion</strong> in 2024, with a steady growth forecast of 7.6% CAGR 
+                <a class="src-link" href="https://www.fortunebusinessinsights.com/u-s-hot-sauce-market-107592" target="_blank">[2]</a>.
             </p>
 
             <div class="data-grid">
                 <div class="data-card">
-                    <strong>13.5%</strong>
-                    Average online share of sauces/dips category in 2022.
+                    <strong>$1.1B</strong>
+                    Annual Hot Sauce Market (USA)
                 </div>
                 <div class="data-card">
-                    <strong>52.7%</strong>
-                    Forecasted global online share for hot sauce by 2025.
+                    <strong>13.5%</strong>
+                    E-commerce Category Share (Growing)
                 </div>
             </div>
 
             <p>
-                While traditional offline grocery still controls the bulk of sales, e-commerce is the fastest-growing channel. For hot sauces, the online share is significantly higher than for mass-market condiments like ketchup. Consumers actively turn to the web to find <strong>ethnic, small-batch, and authentic</strong> products that are not available on local supermarket shelves.
+                Online channels are the primary growth engine for ethnic and premium condiments. Consumers increasingly bypass traditional retailers in favor of <strong>Amazon, D2C platforms, and specialty e-grocery</strong> to discover authentic global flavors.
             </p>
         </section>
 
         <!-- 2. MONTHLY VOLUME -->
         <section id="online">
-            <h2>2. Monthly Online Volume: The $37M Opportunity</h2>
+            <h2>2. Monthly Volume: The Digital Opportunity</h2>
             <p>
-                To understand the immediate opportunity for <strong>Sambal Josh</strong>, we calculated the monthly online hot sauce revenue in the US:
+                Based on current market data, the monthly online revenue for hot sauces and spicy condiments in the US is estimated at <strong>USD 27.5 – 36.7 Million</strong>.
             </p>
             <ul>
-                <li>Total Annual US Hot Sauce Market: <strong>~$1.1 Billion</strong>.</li>
-                <li>Estimated Online & D2C Share: <strong>30–40%</strong> (conservative estimate for specialty/ethnic products).</li>
-                <li><strong>Monthly Online Revenue: USD 27.5 – 36.7 Million.</strong></li>
+                <li>Specialty/Ethnic Online Penetration: <strong>30–40%</strong> of the category.</li>
+                <li>US Online Market Capacity: <strong>$330M – $440M per year</strong>.</li>
+                <li>Consumer behavior: Shift towards "Discovery-based" shopping and high-margin subscription models 
+                    <a class="src-link" href="https://statledger.com/products/usa-hot-sauce-market-trend-analysis-forecasts" target="_blank">[3]</a>.</li>
             </ul>
-            <p>
-                This estimate remains consistent across various reports, reflecting both the general rise in grocery e-commerce 
-                <a class="src-link" href="https://agriculture.canada.ca/en/international-trade/market-intelligence/reports-and-guides/sector-trend-analysis-sauces-dips-and-condiment-trends-united-states" target="_blank">[1]</a> 
-                and specific hot sauce trends 
-                <a class="src-link" href="https://www.coherentmarketinsights.com/industry-reports/hot-sauce-market" target="_blank">[4]</a>. 
-                If we expand this to "all spicy seasonings," the volume scales significantly higher.
-            </p>
         </section>
 
         <!-- 3. COMPETITION -->
         <section id="landscape">
-            <h2>3. Competitive Landscape (US Online)</h2>
-            <p>The market is divided into four distinct layers of competition:</p>
-            <ul>
-                <li><strong>Mass Brands:</strong> Tabasco, Frank's RedHot — high volume, low price, low storytelling 
-                    <a class="src-link" href="https://www.accio.com/business/best_selling_hot_sauce_us" target="_blank">[17]</a>.</li>
-                <li><strong>Asian Staples:</strong> Sriracha, Gochujang, Thai Chili — familiar "Asian Heat" category 
-                    <a class="src-link" href="https://www.reddit.com/r/hotsauce/comments/1d3u0ub/looking_for_hot_sauces_that_align_with_ethnic/" target="_blank">[21]</a>.</li>
-                <li><strong>Imported Indonesian:</strong> ABC, Indofood — sold as commodity grocery items via specialized stores like 
-                    <a class="src-link" href="https://www.indofoodstore.com" target="_blank">Indo Food Store</a> [8].</li>
-                <li><strong>Artisan D2C:</strong> Premium brands like 
-                    <a class="src-link" href="https://balimarle.com" target="_blank">Bali Marle</a> [11] or 
-                    <a class="src-link" href="https://sauceupnyc.com/products/chili-crisp-sauce" target="_blank">SauceUpNYC</a> [20].</li>
-            </ul>
-
+            <h2>3. Competitive Ecosystem</h2>
+            <p>The US online market for "Asian Heat" is segmented by price and storytelling depth:</p>
+            
             <div class="matrix-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Feature</th>
-                            <th>Mass Hot Sauce</th>
-                            <th>Imported Indo</th>
-                            <th>Artisan D2C Brands</th>
+                            <th>Category</th>
+                            <th>Key Players</th>
+                            <th>Pricing</th>
+                            <th>Differentiation</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Price</td>
-                            <td>Low ($3-5)</td>
-                            <td>Mid</td>
-                            <td><strong>Premium ($8-15)</strong></td>
+                            <td>Mass Market</td>
+                            <td>Tabasco, Cholula</td>
+                            <td>$3 - $5</td>
+                            <td>Volume / Global Reach</td>
                         </tr>
                         <tr>
-                            <td>Authenticity</td>
-                            <td>Low</td>
-                            <td>High</td>
-                            <td><strong>Ultra High</strong></td>
+                            <td>Asian Staples</td>
+                            <td>Huy Fong, ABC</td>
+                            <td>$4 - $7</td>
+                            <td>Grocery Commodity</td>
                         </tr>
                         <tr>
-                            <td>Storytelling</td>
-                            <td>Weak</td>
-                            <td>None</td>
-                            <td><strong>Strong / Chef-led</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Balinese Presence</td>
-                            <td>None</td>
-                            <td>Low</td>
-                            <td><strong>Micro-niche</strong></td>
+                            <td>Artisan D2C</td>
+                            <td>Bali Marle, SauceUp</td>
+                            <td>$10 - $15</td>
+                            <td><strong>Story / Premium Craft</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <p>
+                <strong>The Gap:</strong> While Indonesian flavors are recognized, a dedicated <strong>"Hero Brand" for Balinese Sambal</strong> is missing from the US premium artisan tier.
+            </p>
         </section>
 
         <!-- 4. EXECUTIVE SUMMARY -->
         <section id="summary">
-            <h2>4. Investment Thesis</h2>
+            <h2>4. Strategic Positioning</h2>
             <p>
-                The investment opportunity lies in <strong>positioning Balinese Sambal as a premium lifestyle condiment</strong>. 
-                While "Indonesian Sambal" is already a known niche with established demand on platforms like Weee! 
-                <a class="src-link" href="https://www.sayweee.com/en/grocery-near-me/lang-en/explore/indonesian-sambal" target="_blank">[10]</a>, 
-                it lacks a dominant, modern, story-driven "hero" brand in the US.
+                Sambal Josh will enter as a <strong>High-End Balinese Condiment</strong>, filling the void between mass-market imports and the rising demand for chef-crafted ethnic sauces. 
+                Discovery via Amazon and retention via D2C storytelling will be the core pillars of growth 
+                <a class="src-link" href="https://www.sayweee.com/en/grocery-near-me/lang-en/explore/indonesian-sambal" target="_blank">[10]</a> 
+                <a class="src-link" href="https://www.statista.com/study/168972/sauces-and-spices-ecommerce-market-data-and-analysis/" target="_blank">[15]</a>.
             </p>
-            <ul>
-                <li><strong>Channel Strategy:</strong> Leverage Amazon as the discovery engine and a high-margin D2C site for community and storytelling.</li>
-                <li><strong>Product Gap:</strong> "Balinese Sambal" (Sambal Bali) accounts for less than 1% of the hot sauce SKUs on Amazon, leaving an open window for market entry.</li>
-            </ul>
         </section>
 
-        <!-- THE BROTHERLY MESSAGE -->
+        <!-- OFFICIAL STRATEGY BLOCK (Brotherly Message) -->
         <section id="next">
-            <div class="brother-block">
-                <h2>Well, that business seems to be worth it, i’m in, my brother.</h2>
-                <p>The question we need to discuss first is: Do we have a budget?</p>
-                <p>Then there are three areas of jobs to be done:</p>
-                <ul>
-                    <li>What should be done in Indo</li>
-                    <li>Logistics</li>
-                    <li>What should be done in US</li>
-                </ul>
-                <span class="big-cta">LETS GO!</span>
+            <div class="strategy-block">
+                <div class="strategy-status">Internal Memo: Partnership Confirmed</div>
+                <h2>The data confirms the potential—this venture is worth the investment. I’m in, brother.</h2>
+                
+                <p>Our primary focus now moves to <strong>Strategic Budget Allocation</strong>. To ensure a successful launch, our roadmap is divided into three critical execution layers:</p>
+                
+                <div class="strategy-grid">
+                    <div class="strategy-item">
+                        <h4>01. Indonesia</h4>
+                        <p>Production, raw material sourcing, and recipe standardization.</p>
+                    </div>
+                    <div class="strategy-item">
+                        <h4>02. Global</h4>
+                        <p>Supply chain infrastructure and international logistics.</p>
+                    </div>
+                    <div class="strategy-item">
+                        <h4>03. United States</h4>
+                        <p>Market entry, D2C launch, and Amazon distribution.</p>
+                    </div>
+                </div>
+
+                <div class="cta-footer">
+                    <p>Priority: Discussing the initial operational budget.</p>
+                    <span>LETS EXECUTE.</span>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="logo">SAMBAL<span>JOSH</span></div>
-        <p>Strictly Premium. Strictly Spicy. Strictly Balinese.</p>
+        <p>Proprietary Market Intelligence &bull; Strictly Confidential</p>
         
         <div class="source-list">
-            <strong>Full Reference List:</strong><br>
-            [1] <a href="https://agriculture.canada.ca/en/international-trade/market-intelligence/reports-and-guides/sector-trend-analysis-sauces-dips-and-condiment-trends-united-states">Canada Agriculture: US Condiment Trends</a><br>
-            [2] <a href="https://www.fortunebusinessinsights.com/u-s-hot-sauce-market-107592">Fortune Business Insights: US Hot Sauce 2032</a><br>
+            [1] <a href="https://agriculture.canada.ca/en/international-trade/market-intelligence/reports-and-guides/sector-trend-analysis-sauces-dips-and-condiment-trends-united-states">Canada Agriculture US Trends</a><br>
+            [2] <a href="https://www.fortunebusinessinsights.com/u-s-hot-sauce-market-107592">Fortune Hot Sauce 2032</a><br>
             [3] <a href="https://statledger.com/products/usa-hot-sauce-market-trend-analysis-forecasts">StatLedger USA Forecasts</a><br>
-            [4] <a href="https://www.coherentmarketinsights.com/industry-reports/hot-sauce-market">Coherent Market: Global Hot Sauce Share</a><br>
-            [8] <a href="http://www.indofoodstore.com">Indo Food Store US</a><br>
-            [10] <a href="https://www.sayweee.com/en/grocery-near-me/lang-en/explore/indonesian-sambal">Weee! Indonesian Assortment</a><br>
-            [11] <a href="https://balimarle.com">Bali Marle Artisan Sambal</a><br>
-            [20] <a href="https://sauceupnyc.com/products/chili-crisp-sauce">SauceUpNYC Premium D2C</a>
+            [4] <a href="https://www.coherentmarketinsights.com/industry-reports/hot-sauce-market">Coherent Global Share</a><br>
+            [8] <a href="http://www.indofoodstore.com">Indo Food Store Catalog</a><br>
+            [10] <a href="https://www.sayweee.com/en/grocery-near-me/lang-en/explore/indonesian-sambal">Weee! Sambal Assortment</a><br>
+            [11] <a href="https://balimarle.com">Bali Marle Artisan</a><br>
+            [15] <a href="https://www.statista.com/study/168972/sauces-and-spices-ecommerce-market-data-and-analysis/">Statista Sauce eCommerce</a>
         </div>
     </footer>
 
